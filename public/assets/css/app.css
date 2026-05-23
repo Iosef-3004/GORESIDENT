@@ -1,0 +1,100 @@
+body{min-height:100vh}.container.narrow{max-width:560px}.auth-wrap{display:grid;place-items:center;min-height:calc(100vh - 84px)}
+.auth-card{width:min(100%,520px)}
+.form-grid{display:grid;gap:12px}.form-grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.form-grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.input, select, textarea{width:100%}textarea.input{min-height:90px;resize:vertical}
+.flash{padding:12px 14px;border-radius:14px;margin-bottom:14px;font-size:14px}.flash.ok{background:rgba(72,187,120,.12);border:1px solid rgba(72,187,120,.32)}.flash.err{background:rgba(245,101,101,.12);border:1px solid rgba(245,101,101,.28)}
+.stat-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.muted{color:var(--muted)}.nowrap{white-space:nowrap}.right{text-align:right}.center{text-align:center}
+.toolbar{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.toolbar .grow{flex:1 1 240px}.actions{display:flex;gap:8px;flex-wrap:wrap}.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.page-head{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:16px}.welcome{margin:0}.small-table td,.small-table th{font-size:13px}
+.login-help{display:grid;gap:8px;margin-top:14px}.pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.kbd{font-family:ui-monospace,monospace;background:#111827;padding:2px 6px;border-radius:6px;border:1px solid rgba(255,255,255,.12)}
+.footer-note{margin-top:14px;color:var(--muted);font-size:13px}.empty{padding:18px;text-align:center;color:var(--muted)}
+@media (max-width: 980px){.stat-cards,.form-grid.cols-2,.form-grid.cols-3{grid-template-columns:1fr}}
+
+/* Chatbot GoResidentGo responsive */
+.chatbot-widget{position:fixed;right:clamp(10px,2.5vw,22px);bottom:clamp(10px,2.5vw,22px);z-index:90;font-size:14px;max-width:calc(100vw - 20px)}
+.chatbot-toggle{min-width:64px;height:64px;border-radius:999px;border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brandB));box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;gap:6px;padding:0 14px;line-height:1}
+.chatbot-robot{font-size:29px;filter:drop-shadow(0 2px 5px rgba(0,0,0,.18))}.chatbot-toggle-text{font-weight:800;font-size:13px;letter-spacing:.2px}
+.chatbot-panel{position:absolute;right:0;bottom:calc(100% + 12px);width:min(390px,calc(100vw - 24px));max-width:calc(100vw - 24px);height:min(540px,calc(100vh - 112px));max-height:calc(100vh - 112px);border:1px solid var(--stroke);background:var(--bg);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.chatbot-panel.hide{display:none}.chatbot-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;background:var(--panel2);border-bottom:1px solid var(--stroke);flex:0 0 auto}.chatbot-title{display:flex;align-items:center;gap:10px;min-width:0}.chatbot-title strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chatbot-title span:not(.chatbot-head-icon){display:block;color:var(--muted);font-size:12px;line-height:1.25}.chatbot-head-icon{width:38px;height:38px;border-radius:999px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(124,58,237,.24),rgba(59,130,246,.20));font-size:23px;flex:0 0 auto}.chatbot-close{width:34px;height:34px;border-radius:999px;border:1px solid var(--stroke);background:var(--panel);color:inherit;cursor:pointer;font-size:22px;line-height:1;flex:0 0 auto}.chatbot-messages{flex:1 1 auto;min-height:0;overflow:auto;padding:14px;display:grid;align-content:start;gap:10px;overscroll-behavior:contain}.chatbot-message{max-width:min(88%,320px);padding:10px 12px;border-radius:14px;border:1px solid var(--stroke);background:var(--panel);overflow-wrap:anywhere;word-break:normal}.chatbot-message strong{display:block;font-size:12px;margin-bottom:4px;color:var(--muted)}.chatbot-message span{display:block;line-height:1.4}.chatbot-message.user{justify-self:end;background:linear-gradient(135deg,rgba(124,58,237,.35),rgba(59,130,246,.30))}.chatbot-message.bot{justify-self:start}.chatbot-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--stroke);background:var(--panel2);flex:0 0 auto}.chatbot-form .input{min-width:0}.chatbot-form .btn{padding:10px 12px;white-space:nowrap}
+@media (max-width:640px){.chatbot-widget{right:10px;bottom:10px;left:10px;max-width:none;display:flex;justify-content:flex-end;pointer-events:none}.chatbot-widget>*{pointer-events:auto}.chatbot-panel{position:fixed;left:10px;right:10px;bottom:84px;width:auto;max-width:none;height:min(560px,calc(100dvh - 104px));max-height:calc(100dvh - 104px);border-radius:18px}.chatbot-toggle{width:64px;min-width:64px;padding:0}.chatbot-toggle-text{display:none}.chatbot-title span:not(.chatbot-head-icon){font-size:11px}.chatbot-form{display:grid;grid-template-columns:1fr auto}.chatbot-message{max-width:92%}}
+@media (max-width:380px){.chatbot-panel{left:6px;right:6px;bottom:78px;height:calc(100dvh - 88px);max-height:calc(100dvh - 88px);border-radius:16px}.chatbot-head{padding:10px}.chatbot-messages{padding:10px}.chatbot-form{padding:10px;gap:6px}.chatbot-form .btn{padding:10px}.chatbot-head-icon{width:34px;height:34px;font-size:20px}}
+@media (max-height:520px){.chatbot-panel{height:calc(100dvh - 26px);max-height:calc(100dvh - 26px);bottom:13px}.chatbot-toggle{display:none}}
+/* PQR floating button and modal */
+.pqr-floating-btn { position: fixed; right: 24px; bottom: 92px; z-index: 80; border: 0; border-radius: 999px; padding: 12px 18px; font-weight: 800; cursor: pointer; box-shadow: 0 12px 28px rgba(15, 23, 42, .22); background: var(--primary, #2563eb); color: #fff; }
+.pqr-modal { position: fixed; inset: 0; z-index: 120; background: rgba(15, 23, 42, .45); display: grid; place-items: center; padding: 20px; }
+.pqr-modal.hide { display: none; }
+.pqr-card { width: min(620px, 100%); background: var(--card, #fff); color: var(--text, #0f172a); border-radius: 20px; box-shadow: 0 24px 70px rgba(15, 23, 42, .28); padding: 20px; }
+.pqr-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.pqr-head strong { display: block; font-size: 20px; }
+.pqr-head span { display: block; font-size: 13px; opacity: .75; margin-top: 4px; }
+.pqr-form { display: grid; gap: 14px; }
+.pqr-form textarea { resize: vertical; min-height: 120px; }
+.pqr-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.pqr-result { font-size: 13px; }
+.pqr-result.ok { color: #15803d; }
+.pqr-result.err { color: #b91c1c; }
+@media (max-width: 720px) { .pqr-floating-btn { right: 18px; bottom: 86px; } .pqr-actions { align-items: stretch; flex-direction: column; } }
+
+/* Topbar shortcuts: Chatbot + PQR */
+.topbar-nav{gap:10px;justify-content:flex-end}.topbar-actions{display:flex;align-items:center;gap:8px}.topbar-icon-btn{position:relative;border:1px solid var(--stroke);background:var(--panel2);color:var(--text);border-radius:999px;min-height:42px;padding:8px 12px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.10);transition:transform .16s ease,box-shadow .16s ease,background .16s ease}.topbar-icon-btn:hover,.topbar-icon-btn.is-active{transform:translateY(-2px);box-shadow:var(--shadow);background:linear-gradient(135deg,rgba(124,58,237,.28),rgba(59,130,246,.22))}.topbar-icon{font-size:20px;line-height:1}.topbar-label{font-weight:800;font-size:13px}.topbar-badge{position:absolute;top:-6px;right:-5px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--danger);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900;border:2px solid var(--bg)}.has-pulse::after{content:"";position:absolute;inset:-4px;border-radius:999px;border:2px solid rgba(59,130,246,.35);animation:topbarPulse 1.9s ease-out infinite;pointer-events:none}@keyframes topbarPulse{0%{transform:scale(.92);opacity:.9}70%{transform:scale(1.18);opacity:0}100%{opacity:0}}
+
+/* Chatbot panel opened from topbar */
+.chatbot-widget{position:fixed;right:clamp(10px,2.5vw,24px);top:76px;bottom:auto;z-index:95;font-size:14px;max-width:calc(100vw - 20px);pointer-events:none}.chatbot-panel{position:relative;right:auto;bottom:auto;width:min(410px,calc(100vw - 24px));height:min(560px,calc(100dvh - 96px));max-height:calc(100dvh - 96px);transform-origin:top right;animation:chatbotDrop .22s ease both;pointer-events:auto}.chatbot-panel.hide{display:none}.chatbot-panel.is-open{display:flex}.chatbot-toggle{display:none!important}@keyframes chatbotDrop{from{opacity:0;transform:translateY(-10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}.chatbot-close{transition:transform .15s ease}.chatbot-close:hover{transform:rotate(90deg)}.message-pop{animation:messagePop .18s ease both}@keyframes messagePop{from{opacity:0;transform:translateY(6px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}.chatbot-suggestions{display:flex;flex-wrap:wrap;gap:8px;align-self:start;max-width:100%;margin-top:2px}.chatbot-suggestions button{border:1px solid var(--stroke);background:var(--panel2);color:var(--text);border-radius:999px;padding:8px 10px;font-size:12px;cursor:pointer;transition:transform .12s ease,background .12s ease}.chatbot-suggestions button:hover{transform:translateY(-1px);background:rgba(124,58,237,.18)}.chatbot-typing span{display:flex!important;gap:4px;align-items:center;height:18px}.chatbot-typing i{width:6px;height:6px;border-radius:999px;background:var(--muted);display:block;animation:typingDot 1s infinite ease-in-out}.chatbot-typing i:nth-child(2){animation-delay:.14s}.chatbot-typing i:nth-child(3){animation-delay:.28s}@keyframes typingDot{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-4px);opacity:1}}
+
+/* Disable old floating PQR button if an older cached element appears */
+.pqr-floating-btn{display:none!important}
+
+@media (max-width:760px){.topbar-inner{align-items:center}.topbar-nav{width:100%;justify-content:space-between}.topbar-actions{order:-1}.topbar-label{display:none}.topbar-icon-btn{min-width:42px;justify-content:center;padding:8px 10px}.chatbot-widget{left:10px;right:10px;top:86px;max-width:none}.chatbot-panel{width:auto;height:min(560px,calc(100dvh - 104px));max-height:calc(100dvh - 104px);border-radius:18px}.chatbot-title span:not(.chatbot-head-icon){font-size:11px}.chatbot-form{display:grid;grid-template-columns:1fr auto}.chatbot-message{max-width:92%}}
+@media (max-width:420px){.nav .badge{display:none}.topbar-nav{gap:6px}.chatbot-widget{top:78px;left:6px;right:6px}.chatbot-panel{height:calc(100dvh - 88px);max-height:calc(100dvh - 88px);border-radius:16px}.chatbot-head{padding:10px}.chatbot-messages{padding:10px}.chatbot-form{padding:10px;gap:6px}.chatbot-form .btn{padding:10px}.chatbot-head-icon{width:34px;height:34px;font-size:20px}}
+
+/* PQR modal responsive/adaptativo */
+.pqr-modal{
+  position:fixed;
+  inset:0;
+  z-index:130;
+  background:rgba(15,23,42,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(10px,2.5vw,24px);
+  overflow:auto;
+  overscroll-behavior:contain;
+}
+.pqr-modal.hide{display:none!important}
+.pqr-card{
+  width:min(640px,100%);
+  max-width:calc(100vw - 20px);
+  max-height:calc(100dvh - 24px);
+  overflow:auto;
+  background:var(--bg,#fff);
+  color:var(--text,#0f172a);
+  border:1px solid var(--stroke,rgba(148,163,184,.28));
+  border-radius:22px;
+  box-shadow:0 24px 80px rgba(15,23,42,.32);
+  padding:clamp(14px,2.5vw,22px);
+  animation:pqrModalIn .22s ease both;
+}
+@keyframes pqrModalIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.pqr-head{
+  position:sticky;
+  top:calc(-1 * clamp(14px,2.5vw,22px));
+  z-index:1;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin:calc(-1 * clamp(14px,2.5vw,22px)) calc(-1 * clamp(14px,2.5vw,22px)) 16px;
+  padding:clamp(14px,2.5vw,22px);
+  background:var(--bg,#fff);
+  border-bottom:1px solid var(--stroke,rgba(148,163,184,.25));
+}
+.pqr-head strong{display:block;font-size:clamp(18px,2.2vw,22px);line-height:1.15}.pqr-head span{display:block;font-size:clamp(12px,1.8vw,13px);opacity:.75;margin-top:4px;line-height:1.35}.pqr-head .btn{flex:0 0 auto;white-space:nowrap}.pqr-form{display:grid;gap:clamp(10px,2vw,14px)}.pqr-form .form-grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pqr-form label{display:block;margin-bottom:6px}.pqr-form input,.pqr-form select,.pqr-form textarea{font-size:16px;max-width:100%}.pqr-form textarea{min-height:clamp(120px,24dvh,220px);max-height:42dvh;resize:vertical}.pqr-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;bottom:calc(-1 * clamp(14px,2.5vw,22px));margin:8px calc(-1 * clamp(14px,2.5vw,22px)) calc(-1 * clamp(14px,2.5vw,22px));padding:12px clamp(14px,2.5vw,22px);background:var(--bg,#fff);border-top:1px solid var(--stroke,rgba(148,163,184,.25))}.pqr-result{font-size:13px;line-height:1.35;min-width:0}.pqr-actions .btn{white-space:nowrap}
+@media (max-width:640px){.pqr-modal{align-items:flex-end;padding:8px}.pqr-card{width:100%;max-width:none;max-height:calc(100dvh - 16px);border-radius:20px 20px 14px 14px}.pqr-head{align-items:center}.pqr-head span{display:none}.pqr-form .form-grid.cols-2{grid-template-columns:1fr}.pqr-actions{flex-direction:column;align-items:stretch}.pqr-actions .btn{width:100%}.pqr-result{text-align:center;min-height:18px}}
+@media (max-width:380px),(max-height:560px){.pqr-modal{padding:6px}.pqr-card{max-height:calc(100dvh - 12px);border-radius:16px;padding:12px}.pqr-head{margin:-12px -12px 12px;padding:12px;top:-12px}.pqr-head strong{font-size:17px}.pqr-head .btn{padding:8px 10px;font-size:12px}.pqr-form{gap:10px}.pqr-form textarea{min-height:100px;max-height:34dvh}.pqr-actions{margin:6px -12px -12px;padding:10px 12px;bottom:-12px}}
+
+/* Recuperación de contraseña */
+.btn.ghost{background:transparent;border:1px solid var(--stroke);color:var(--text);text-decoration:none}
+.auth-card .actions{align-items:center}
+.auth-card .actions .btn{justify-content:center}
+@media (max-width:560px){.auth-card .actions{display:grid;grid-template-columns:1fr}.auth-card .actions .btn{width:100%}}
